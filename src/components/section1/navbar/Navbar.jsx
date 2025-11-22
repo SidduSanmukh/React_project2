@@ -4,7 +4,7 @@ import Links from "./Links";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between p-8 ">
+    <div className="flex justify-between px-12 py-8">
       <SiteName />
       <Links />
     </div>

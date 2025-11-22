@@ -3,7 +3,7 @@ import { MoveUpRight } from "lucide-react";
 const Arrow = () => {
   return (
     <div>
-      <MoveUpRight />
+      <MoveUpRight className="w-15 h-15"/>
     </div>
   );
 };
