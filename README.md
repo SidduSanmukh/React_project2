@@ -1,16 +1,76 @@
-# React + Vite
+# React_project2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React application scaffolded with Vite. This repository contains a lightweight single-page app built with React and Vite, focused on a component-based layout with modular sections and a responsive navbar.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fast development server using `vite`.
+- Component-driven structure organized under `src/components`.
+- Simple CSS styling with `src/index.css` and `src/App.css`.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (JSX)
+- Vite (dev server and build tool)
+- Plain CSS
 
-## Expanding the ESLint configuration
+## Project Structure (important files)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `index.html` — App entry HTML used by Vite.
+- `package.json` — Scripts & dependencies.
+- `vite.config.js` — Vite configuration.
+- `src/main.jsx` — React entrypoint (mounts the app).
+- `src/App.jsx` — Main application component.
+- `src/index.css`, `src/App.css` — Global and app styles.
+- `src/assets/` — Static assets (images, icons, etc.).
+- `public/` — Static files served by Vite.
+- `src/components/` — Component directory (see details below).
+
+Component highlights:
+
+- `src/components/section1/` — Main landing / hero section and nested subcomponents:
+  - `MainSection/MainSection.jsx` — primary layout for the left/right split
+  - `MainSection/LeftSection/LeftTop.jsx` and `Arrow.jsx` — left-side UI pieces
+  - `MainSection/RightSection/RightSection.jsx` and `Cards.jsx` — right-side cards and content
+  - `navbar/` — `Navbar.jsx`, `Links.jsx`, `SiteName.jsx` — top navigation components
+- `src/components/section2/` — additional content section (placeholder)
+
+## Scripts
+
+Use the following npm scripts (run from the project root):
+
+```
+npm install
+npm run dev       # start Vite dev server (hot reload)
+npm run build     # build production bundle
+npm run preview   # locally preview production build
+```
+
+If you use `yarn` or `pnpm`, corresponding commands (`yarn`, `yarn dev`, etc.) will work too.
+
+## Development Notes
+
+- Entry point: `src/main.jsx` mounts `App` from `src/App.jsx`.
+- Layout is componentized under `src/components` — add or modify components there.
+- Styles are plain CSS; feel free to migrate to CSS Modules or a CSS-in-JS solution if needed.
+
+## How to extend
+
+- To add a new page/section: create a folder under `src/components/`, add component files, and import/use them inside `src/App.jsx`.
+- To add images: place them in `src/assets/` and import using relative paths.
+
+## Troubleshooting
+
+- If dev server doesn't start, ensure Node.js and npm are installed and run `npm install`.
+- If imports fail, verify file paths and that JSX file extensions are `.jsx`.
+
+## Contributing
+
+- Open an issue or submit a pull request with a clear description and example.
+
+---
+
+If you want, I can also:
+
+- Add a short `CONTRIBUTING.md` with contribution guidelines.
+- Generate a small project diagram or component map.
